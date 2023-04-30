@@ -1,0 +1,11 @@
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li>
+      <% done = recipe.done? ? "[X]" : "[ ]" %>
+      <%= done + recipe.name + ":" + recipe.description%>
+      <a href="/recipes/<%= index %>">Destroy</a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/new">create a new recipe</a>
